@@ -28,6 +28,12 @@
   	<description></description>
   	<servlet-class>com.createiq.sms.controller.StudentUpdateController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>StudentDeleteController</servlet-name>
+  	<display-name>StudentDeleteController</display-name>
+  	<description></description>
+  	<servlet-class>com.createiq.sms.controller.StudentDeleteController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>StudentSaveController</servlet-name>
   	<url-pattern>/save</url-pattern>
@@ -43,5 +49,9 @@
   <servlet-mapping>
   	<servlet-name>StudentUpdateController</servlet-name>
   	<url-pattern>/update</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>StudentDeleteController</servlet-name>
+  	<url-pattern>/delete</url-pattern>
   </servlet-mapping>
 </web-app>

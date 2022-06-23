@@ -12,4 +12,6 @@ public interface StudentDAO {
 
 	List<Student> getAllStudents();
 
+	int delete(Integer id);
+
 }

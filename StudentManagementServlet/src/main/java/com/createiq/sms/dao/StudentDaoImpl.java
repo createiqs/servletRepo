@@ -78,6 +78,21 @@ public class StudentDaoImpl implements StudentDAO {
 		return student;
 	}
 
+	@Override
+	public int delete(Integer id) {
+		Connection connection=null;
+		PreparedStatement ps=null;
+		try {
+			connection=ConnectionUtil.openConnection();
+			ps=connection.prepareStatement(StudentQueries.DELETE_BY_ID);
+			ps.setInt(1, id);
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
 //	public static void main(String[] args) {
 //		StudentDaoImpl impl = new StudentDaoImpl();
 //		List<Student> allStudents = impl.getAllStudents();

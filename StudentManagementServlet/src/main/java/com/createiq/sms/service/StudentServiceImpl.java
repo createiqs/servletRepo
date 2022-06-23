@@ -23,4 +23,9 @@ public class StudentServiceImpl implements StudentService {
 
 	}
 
+	@Override
+	public int delete(Integer id) {
+		return dao.delete(id);
+	}
+
 }

@@ -11,5 +11,7 @@ public interface StudentService {
 	Student update(Student student);
 
 	List<Student> getAllStudents();
+	
+	int delete(Integer id);
 
 }
