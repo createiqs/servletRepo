@@ -7,37 +7,59 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <style type="text/css">
 #customers {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
 }
-#customers td, #customers th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-#customers tr:hover {background-color: #ddd;}
-#customers tr:nth-child(even){background-color: #f2f2f2;}
 
+#customers td, #customers th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+#customers tr:hover {
+	background-color: #ddd;
+}
+
+#customers tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
 
 #customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #04AA6D;
-  color: white;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #04AA6D;
+	color: white;
 }
 </style>
 </head>
 <body>
-	<h1>Student Management Service</h1>
+	<h1 align="center">Student Management Service</h1>
+
+	<h2>
+
+		<a href="sms-reg.jsp" class="btn btn-primary">addStudent</a>
+
+	</h2>
 	<%
 		List<Student> students = (List<Student>) request.getAttribute("students");
+		String message = (String) request.getAttribute("msg");
+		message = message == null ? "" : message;
+	%>
+	<%
+		out.print(message);
 	%>
 
 
-	<table  id="customers">
+	<table id="customers">
 		<tr>
 			<th>ID</th>
 			<th>Name</th>
@@ -53,7 +75,7 @@
 			<td><%=student.getName()%></td>
 			<td><%=student.getEmail()%></td>
 			<td><%=student.getCourseName()%></td>
-			<td><a href="#">update</a> <a href="#">delete</a></td>
+			<td><a href="edit?id=<%=student.getId()%>">Edit</a> <a href="#">delete</a></td>
 		</tr>
 
 		<%

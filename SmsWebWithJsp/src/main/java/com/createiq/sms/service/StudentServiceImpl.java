@@ -28,4 +28,9 @@ public class StudentServiceImpl implements StudentService {
 		return dao.delete(id);
 	}
 
+	public Student getById(int id) {
+		return dao.getById(id);
+
+	}
+
 }
