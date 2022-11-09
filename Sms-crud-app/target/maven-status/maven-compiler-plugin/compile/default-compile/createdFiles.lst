@@ -1,0 +1,9 @@
+com\ciq\sms\dao\StudentDaoImpl.class
+com\ciq\sms\queries\StudentQueries.class
+com\ciq\sms\dao\StudentDao.class
+com\ciq\sms\controller\StudentFindAllController.class
+com\ciq\sms\controller\StudentSaveController.class
+com\ciq\sms\util\ConnectionUtil.class
+com\ciq\sms\service\StudentServiceImpl.class
+com\ciq\sms\service\StudentService.class
+com\ciq\sms\model\Student.class
